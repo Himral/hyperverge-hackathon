@@ -1,5 +1,5 @@
 html {
-  background: url("./images/pexels-jaime-reimer-2662116.jpeg") no-repeat center
+  background: url("./images/pexels-jaime-reimer-2662116.jpg") no-repeat center
     center fixed;
   background-size: cover;
   background-blend-mode: multiply;
@@ -14,7 +14,7 @@ body {
   text-align: center;
   padding: 10px;
   box-sizing: border-box;
-  --font-color: #666;
+  --font-color: hsl(0, 14%, 92%);
   color: var(--font-color);
   display: flex;
   flex-direction: column;
@@ -23,6 +23,7 @@ header,
 main,
 footer {
   display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -31,7 +32,7 @@ header {
 
 main {
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   flex: 1;
   align-items: center;
 }
@@ -46,39 +47,23 @@ five-habit-tracker {
 }
 
 .clock-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 335px;
 }
 
-#about .mySocial {
-  background: #ffffffa1;
-  border-radius: 4px;
+.main-sub-class{
+  display: flex;
+  flex-direction: row;
+  gap : 10%;
+  justify-content: space-between;
 }
-#about .mySocial a {
-  display: inline-block;
-  padding: 0 4px;
-}
-.mySocialInfo {
-  font-size: 14px;
-  color: var(--font-color);
-  padding: 4px 10px;
-  border-radius: 2px;
-  margin-bottom: 4px;
-}
-.mySocialInfo a {
-  color: var(--font-color);
-}
-#about .mySocial a i {
-  font-size: 24px;
-}
-#about .mySocial a i.fa-linkedin {
-  color: #0073b0;
-}
-#about .mySocial a i.fa-github {
-  color: #24292e;
-}
-#about .mySocial a i.fa-twitter {
-  color: #1da1f2;
-}
-#about .mySocial a i.fa-medium {
-  color: black;
+
+.main-sub-class-left{
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

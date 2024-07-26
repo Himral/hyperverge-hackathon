@@ -6,7 +6,7 @@ class PomodoroTimer extends HTMLElement {
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #072f5f;
+        background-color: rgba(255, 255, 255, 0.1);
         color: white;
         font-family: Arial, sans-serif;
       }
@@ -22,7 +22,7 @@ class PomodoroTimer extends HTMLElement {
         font-size: 1.5rem;
         margin: 5px;
         padding: 10px 20px;
-        background-color: #444;
+        background-color: rgba(255, 238, 169, 0.1);
         color: white;
         border: none;
         border-radius: 5px;
@@ -30,7 +30,7 @@ class PomodoroTimer extends HTMLElement {
       }
 
       button.active {
-        background-color: #888;
+        background-color: #CA8787;
       }
 
       #mode-btns {
@@ -167,13 +167,13 @@ class PomodoroTimer extends HTMLElement {
 
     switch (mode) {
       case 'pomodoro':
-        this.shadowRoot.host.style.backgroundColor = `#072f5f`;
+        this.shadowRoot.host.style.backgroundColor = `rgba(241, 229, 209, 0.1)`;
         break;
       case 'long':
-        this.shadowRoot.host.style.backgroundColor = `#1261a0`;
+        this.shadowRoot.host.style.backgroundColor = `rgba(241, 229, 209, 0.1)`;
         break;
       case 'short':
-        this.shadowRoot.host.style.backgroundColor = `#3895d3`;
+        this.shadowRoot.host.style.backgroundColor = `rgba(241, 229, 209, 0.1)`;
         break;
     }
 

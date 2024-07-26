@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>🚀 Personal Dashboard</title>
+    <title>🚀 HyperVerge </title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -17,15 +17,37 @@
     <main>
         <section class="clock-section">
             <my-clock></my-clock>
+            <h1>Hi Hyperverge , I hope you like it</h1>
         </section>
-        <section>
-            <h1>Habit Tracker 💪</h1>
-            <five-habit-tracker></five-habit-tracker>
-        </section>
-        <section>
-            <h1>Pomodoro Timer 💪</h1>
-            <pomodoro-timer></pomodoro-timer>
-        </section>
+        <div class = "main-sub-class">
+            <div class = "main-sub-class-left">
+                <section>
+                    <h1>Embed Google Slide</h1>
+                    <label for="presentationId">Enter Presentation ID:</label>
+                    <input type="text" id="presentationId" placeholder="e.g., 1H7wOd7e8-3eKJ4s5O5k3N2">
+                    <button class="btn" onclick="generateEmbedCode()">Generate Embed Code</button>
+                    <div id="output" class="output"></div>
+                    <div id="presentationContainer"></div>
+                </section>
+                <section>
+                    <h1>To Do List</h1>
+                    <todo-list></todo-list>
+                </section>
+            </div>
+            
+            <!-- <section>
+                <h1>Habit Tracker 💪</h1>
+                <five-habit-tracker></five-habit-tracker>
+            </section> -->
+
+            <section>
+                <h1>Pomodoro Timer</h1>
+                <pomodoro-timer></pomodoro-timer>
+            </section>
+            
+        </div>
+        
+        
     </main>
     <footer>
 
@@ -34,5 +56,31 @@
 <script src="./src/five-habit-tracker/main.js"></script>
 <script src="./src/clock/main.js"></script>
 <script src="./src/Pomodoro_Timer/main.js"></script>
+<script src="./src/To-Do-Extension/content.js"></script>
+<script>
+    function generateEmbedCode() {
+        const presentationId = document.getElementById('presentationId').value.trim();
+        if (presentationId) {
+            const embedCode = `<iframe src="https://docs.google.com/presentation/d/${presentationId}/embed" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>`;
+            document.getElementById('output').innerText = embedCode;
+            document.getElementById('output').style.display = 'block';
+
+            const iframe = document.createElement('iframe');
+            iframe.src = `https://docs.google.com/presentation/d/${presentationId}/embed`;
+            iframe.frameBorder = "0";
+            iframe.width = "960";
+            iframe.height = "569";
+            iframe.allowFullscreen = true;
+            iframe.mozallowfullscreen = true;
+            iframe.webkitallowfullscreen = true;
+
+            const presentationContainer = document.getElementById('presentationContainer');
+            presentationContainer.innerHTML = '';
+            presentationContainer.appendChild(iframe);
+        } else {
+            alert("Please enter a valid Presentation ID.");
+        }
+    }
+</script>
 
 </html>
